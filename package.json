@@ -4,8 +4,12 @@
   "description": "proyecto_cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress open",
+    "test:open": "cypress open"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "[miguel castillo] <al.m.castillo.927@gmail.com> miguel927 ",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.3.0"
+  }
 }
