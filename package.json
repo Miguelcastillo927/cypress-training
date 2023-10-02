@@ -10,6 +10,7 @@
   "author": "[miguel castillo] <al.m.castillo.927@gmail.com> miguel927 ",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.3.0"
+    "cypress": "^13.3.0",
+    "typescript": "^5.2.2"
   }
 }
