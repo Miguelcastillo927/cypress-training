@@ -62,10 +62,7 @@ describe("Pruebas en DemoBlaze", () => {
           // compare the sum the products with that of the page
 
          cy.then(()=>cy.get("#totalp").should("have.text",priceTotal))
-
-        
-
-        
+      
             
           //make a purshase
 
@@ -83,12 +80,7 @@ describe("Pruebas en DemoBlaze", () => {
 
            // verify if the purshase was succesful
 
-          
-
-          cy.contains("Thank you for your purchase!").should("be.visible");
-          // cy.get("div#orderModal").should('include.text', "#name");
-
-           cy.wait(2000)
+           cy.contains("Thank you for your purchase!").should("be.visible");         
           cy.get("div .confirm").click();
 
            // send message
