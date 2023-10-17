@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-17T03:43:13.274Z",
+    "end": "2023-10-17T03:43:38.432Z",
+    "duration": 25158,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "00a080be-12c3-4cd8-b7c0-216c21634e98",
+      "title": "",
+      "fullFile": "cypress\\e2e\\shopping-flow.cy.ts",
+      "file": "cypress\\e2e\\shopping-flow.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bb6a7997-247b-4b72-9a93-9ba7a4c69d77",
+          "title": "Pruebas en DemoBlaze",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verify login is correct",
+              "fullTitle": "Pruebas en DemoBlaze verify login is correct",
+              "timedOut": null,
+              "duration": 9069,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(\"Welcome\").should(\"be.visible\");\ncy.get(\"#nameofuser\").should(\"contain\", \"miguel123\");",
+              "err": {},
+              "uuid": "a6b9457d-1112-41f5-90d8-129ae0089012",
+              "parentUUID": "bb6a7997-247b-4b72-9a93-9ba7a4c69d77",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verify purchase in the page",
+              "fullTitle": "Pruebas en DemoBlaze verify purchase in the page",
+              "timedOut": null,
+              "duration": 11232,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//login\ncy.get(\"#login2\").click();\ncy.get(\"#loginusername\").type(\"miguel123\", { force: true });\ncy.get(\"#loginpassword\").type(\"123465\", { force: true });\ncy.get(\"#logInModal > div > div > div.modal-footer > button.btn.btn-primary\").click();\n// add the phone\ncy.get(\"#itemc\").click();\ncy.get(\"#tbodyid > div:nth-child(1) > div > a > img\").click();\ncy.get(\"#tbodyid > div.row > div > a\").click();\ncy.get(\"#navbarExample > ul > li.nav-item.active > a\").click();\n// add the laptop\ncy.get(\"a#itemc\").eq(1).click();\ncy.get(\"#tbodyid > div:nth-child(3) > div > div > h4 > a\").click();\ncy.get(\"#tbodyid > div.row > div > a\").click();\ncy.get(\"#navbarExample > ul > li.nav-item.active > a\").click();\n// add the monitor\ncy.get(\"a#itemc\").eq(2).click();\ncy.get(\"#tbodyid > div:nth-child(1) > div > a > img\").click();\ncy.get(\"#tbodyid > div.row > div > a\").click();\ncy.get(\"#cartur\").click();\ncy.contains(\"Samsung galaxy s6\");\ncy.contains(\"MacBook air\");\ncy.contains(\"Apple monitor 24\");\nvar priceTotal = 0;\ncy.get(\"table tbody tr td:nth-child(3)\").each(function (price) {\n    priceTotal += parseInt(price.text());\n});\n// compare the sum the products with that of the page\ncy.then(function () { return cy.get(\"#totalp\").should(\"have.text\", priceTotal); });\n//make a purshase\ncy.get(\"#page-wrapper > div > div.col-lg-1 > button\").click();\ncy.contains(\"Place order\");\ncy.get(\"#orderModal > div > div > div.modal-body > form > div:nth-child(2)\").click();\ncy.get(\"#name\").type(\"miguel castillo\", { force: true });\ncy.get(\"#country\").type(\"colombia\");\ncy.get(\"#city\").type(\"bogota\");\ncy.get(\"#card\").type(\"242424242424242\");\ncy.get(\"#month\").type(\"122024\");\ncy.get(\"#year\").type(\"987\");\ncy.get(\"#orderModal > div > div > div.modal-footer > button.btn.btn-primary\").click();\n// verify if the purshase was succesful\ncy.contains(\"Thank you for your purchase!\").should(\"be.visible\");\ncy.get(\"div .confirm\").click();\n// send message",
+              "err": {},
+              "uuid": "fbda10c1-4f54-4100-b17c-5735521c5fe5",
+              "parentUUID": "bb6a7997-247b-4b72-9a93-9ba7a4c69d77",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verify send message",
+              "fullTitle": "Pruebas en DemoBlaze verify send message",
+              "timedOut": null,
+              "duration": 4591,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#navbarExample > ul > li:nth-child(2) > a\").click();\ncy.get(\"#recipient-email\").click();\ncy.get(\"#recipient-email\").type(\"miguel@gmail.com\", { force: true });\ncy.get(\"#recipient-name\").click();\ncy.get(\"#recipient-name\").type(\"miguel castillo\", { force: true });\ncy.get(\"#message-text\").click();\ncy.get(\"#message-text\").type(\"message to send\", { force: true });\ncy.get(\"#exampleModal > div > div > div.modal-footer > button.btn.btn-primary\").click();\ncy.on(\"window:alert\", function (text) {\n    //Verificar el contenido de la alerta\n    expect(text).to.contains(\"Thanks for the message!!\");\n});",
+              "err": {},
+              "uuid": "fb64136f-8bb2-4ff0-ab86-adc6653d4bf6",
+              "parentUUID": "bb6a7997-247b-4b72-9a93-9ba7a4c69d77",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a6b9457d-1112-41f5-90d8-129ae0089012",
+            "fbda10c1-4f54-4100-b17c-5735521c5fe5",
+            "fb64136f-8bb2-4ff0-ab86-adc6653d4bf6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24892,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

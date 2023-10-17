@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-17T03:43:45.776Z",
+    "end": "2023-10-17T03:44:00.505Z",
+    "duration": 14729,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5532bb1d-d811-43e9-8873-1ff4c2733352",
+      "title": "",
+      "fullFile": "cypress\\e2e\\shopping.cy.ts",
+      "file": "cypress\\e2e\\shopping.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "01f5bfd8-218b-4e77-a546-1ee0c112f8b2",
+          "title": "Pruebas en DemoBlaze",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "navegar a la aplicacion",
+              "fullTitle": "Pruebas en DemoBlaze navegar a la aplicacion",
+              "timedOut": null,
+              "duration": 14572,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });\nvar username = index_2.LoginConstants.testData.username;\nvar password = index_2.LoginConstants.testData.password;\nvar productName = index_3.HomeConstants.testData.productName;\nvar orderTestData = index_3.placeOrderConstants.testData;\nvar productNamel = index_1.LaptopsConstants.testData.productNamel;\nvar productNameM = index_1.MonitorConstants.testData.productNameM;\nindex_3.pageHelper.visitThePage();\nindex_2.LoginHelper.Login(username, password);\nindex_3.pageHelper.ClickOnHome();\nindex_2.HomeHelper.clickProductName(productName);\nindex_2.productHelper.clikOnAddtoCartButton();\nindex_3.pageHelper.ClickOnHome();\nindex_2.HomeHelper.clickCategoryLaptop();\nindex_1.LaptopsHelper.clickProductName(productNamel);\nindex_1.LaptopsHelper.clikOnAddtoCartButton();\nindex_3.pageHelper.ClickOnHome();\nindex_2.HomeHelper.clickCategoryMonitors();\nindex_1.MonitorsHelper.clickProductName(productNameM);\nindex_1.MonitorsHelper.clikOnAddtoCartButton();\nindex_3.pageHelper.clickOtocart();\nindex_2.CartHelper.ClickOnPlaceOrder();\nindex_2.CartHelper.VerifyProducts(productName);\nindex_3.placeOrderHelper.instrtName(orderTestData.name);\nindex_3.placeOrderHelper.insertCountry(orderTestData.country);\nindex_3.placeOrderHelper.insertcity(orderTestData.city);\nindex_3.placeOrderHelper.insertCard(orderTestData.card);\nindex_3.placeOrderHelper.insertMonth(orderTestData.month);\nindex_3.placeOrderHelper.insertYear(orderTestData.year);\nindex_3.placeOrderHelper.clickonButtonPurchase();\nindex_3.placeOrderHelper.verifyPurchase();",
+              "err": {},
+              "uuid": "3f0895c2-9684-4795-8814-ed2aed496cf4",
+              "parentUUID": "01f5bfd8-218b-4e77-a546-1ee0c112f8b2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3f0895c2-9684-4795-8814-ed2aed496cf4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14572,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
