@@ -8,7 +8,9 @@ describe("Pruebas en DemoBlaze", () => {
       cy.get("#login2").click();             
       cy.get("#loginusername").type("miguel123",{force:true}); 
       cy.get("#loginpassword").type("123465",{force:true});
-      cy.get("#logInModal > div > div > div.modal-footer > button.btn.btn-primary").click();
+      
+      cy.contains("button","Log in").click();
+      
       
     });
         
